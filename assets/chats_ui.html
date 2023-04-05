@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="chats_ui.css">
+</head>
+
+<body>
+    <div class="chats-ui">
+        <div class="header">
+            <div class="lhs">
+                <div class="back-btn" onclick="goBackToChatListView()">
+                    <img src="./icons/arrow-left-solid.svg" class="header-icons">
+                </div>
+                <div class="dp">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4j5EsloB48DnxRWOYQKJxT01dGj6cVFEDPQ&usqp=CAU"
+                        class="dp-img">
+                </div>
+                <div class="user-stats">
+                    <div class="user-name">Carmen Meyers</div>
+                    <div class="online-status">Online</div>
+                </div>
+            </div>
+            <div class="rhs">
+                <div class="user-menu">
+                    <img src="./icons/ellipsis-vertical-solid.svg" class="header-icons user-menu">
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-body">
+            <div class="lhs">
+                <div class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti debitis optio,
+                    tempora numquam pariatur perspiciatis iste et aliquid at ut reiciendis quos nam nesciunt! Quia
+                    exercitationem maxime iure delectus iusto?</div>
+                <div class="time">9:52 AM</div>
+            </div>
+            <div class="rhs">
+                <div class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti debitis optio,
+                    tempora numquam pariatur perspiciatis iste et aliquid at ut reiciendis quos nam nesciunt! Quia
+                    exercitationem maxime iure delectus iusto?</div>
+                <div class="time">9:52 AM</div>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <div class="chat-input">
+                <textarea oninput="autoResizeTextarea(this)"></textarea>
+            </div>
+            <div class="send-msg-btn" onclick="handleSendMsg()">
+                <img src="./icons/paper-plane-right-fill.svg" class="send-msg-icon">
+            </div>
+        </div>
+
+        <!-- <div class="send-msg-btn">
+            <img src="./icons/paper-plane-right-fill.svg" class="send-msg-icon">
+        </div> -->
+    </div>
+</body>
+
+<script>
+    function autoResizeTextarea(textarea) {
+        textarea.style.height = 'auto'; // Reset textarea height to auto
+        textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px'; // Set textarea height to content height, limited to 240px
+    }
+
+    function goBackToChatListView() {
+        window.location.href = `/assets/chat_list_ui.html`;
+    }
+
+    function handleSendMsg(event) {
+        const msgBar = document.querySelector('.chat-input > textarea');
+        msgBar.focus();
+    }
+</script>
+
+</html>

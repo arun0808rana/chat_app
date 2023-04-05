@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-screen > *{
+  user-select: none;
+}
+.main-screen > .header_pills-container {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 16px 8px;
+}
+
+.main-screen > .header_pills-container > .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.main-screen > .header_pills-container > .header > .lhs {
+  /* display: flex; */
+  width: 100%;
+}
+
+.main-screen > .header_pills-container > .header > .rhs {
+  display: flex;
+  width: 100%;
+  min-width: 320px;
+  justify-content: end;
+}
+
+.main-screen > .header_pills-container > .header > .rhs > .global-search {
+  position: relative;
+  margin-right: 16px;
+  display: flex;
+  width: 100%;
+}
+
+.main-screen
+  > .header_pills-container
+  > .header
+  > .rhs
+  > .global-search
+  > .global-search-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #d3d3d3;
+  outline: none;
+  visibility: hidden;
+}
+
+.main-screen > .header_pills-container > .header > .rhs > .account-settings {
+  margin: 0 8px;
+}
+
+.header-icons {
+  width: 24px;
+  height: 24px;
+}
+
+.pills {
+  display: flex;
+  border-bottom: 1px solid #747474;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.pills > .pill {
+  padding: 8px 16px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 16px;
+}
+
+.pills > .pill.active {
+  background-color: #d3d3d3;
+}
+
+.chat-list {
+  padding: 8px;
+}
+
+.user-chat {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.dp {
+  border-radius: 100%;
+  overflow: hidden;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  margin-right: 16px;
+}
+
+.dp > .dp-img {
+  width: 100%;
+}
+
+.msg-preview {
+  width: 96%;
+}
+.msg-body {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #747474;
+  font-size: 14px;
+  max-width: 96%;
+}
+
+.msg-user-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.msg-stats {
+  min-width: 56px;
+  font-size: 14px;
+}
+
+.msg-count {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #d3d3d3;
+  text-align: center;
+  line-height: 24px;
+  margin-left: auto;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.msg-time {
+  text-align: right;
+  font-size: 12px;
+}

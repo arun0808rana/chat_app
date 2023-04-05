@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.chats-ui {
+  height: 100%;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #d3d3d3;
+  background-color: #fff;
+}
+
+.header > div {
+  margin-right: 8px;
+}
+
+.header-icons {
+  width: 24px;
+  height: 24px;
+}
+
+.dp {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.dp > .dp-img {
+  width: 40px;
+  height: 40px;
+}
+
+.header > .lhs {
+  display: flex;
+  align-items: center;
+}
+
+.header > .lhs > div {
+  margin-right: 8px;
+}
+
+/* .header > .lhs > .back-btn {
+  margin-right: 16px;
+} */
+
+.header > .lhs > .user-stats > .user-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.header > .lhs > .user-stats > .online-status {
+  font-size: 12px;
+}
+
+/* chat body */
+
+.chat-body {
+  padding: 8px;
+  font-size: 16px;
+  height: 100%;
+}
+
+.chat-body > .lhs {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgb(209, 255, 215);
+}
+
+.chat-body > .rhs {
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  background-color: rgb(232, 209, 255);
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.chat-body > .lhs > .time {
+  width: fit-content;
+  font-size: 12px;
+  color: #747474;
+  margin-left: auto;
+}
+
+.chat-body > .rhs > .time {
+  width: fit-content;
+  font-size: 12px;
+  color: #747474;
+  margin-left: auto;
+}
+
+/* chat input */
+.chat-input-container {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  padding: 8px;
+}
+
+.chat-input > textarea {
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
+  height: 48px;
+  max-height: 100px;
+  overflow-y: auto;
+  resize: none;
+}
+
+.chat-input {
+  position: relative;
+  width: 100%;
+  margin-right: 4px;
+}
+
+.send-msg-btn {
+  /* position: sticky;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  margin-left: auto; */
+}
+
+.send-msg-icon {
+  width: 48px;
+  height: 48px;
+}

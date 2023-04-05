@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="chat_list_ui.css">
+</head>
+
+<body>
+    <div class="main-screen">
+        <div class="header_pills-container">
+            <div class="header">
+                <div class="lhs"></div>
+                <div class="rhs">
+                    <div class="global-search">
+                        <input type="text" class="global-search-input">
+                        <img src="./icons/magnifying-glass-solid.svg" class="header-icons">
+                    </div>
+                    <div class="account-settings">
+                        <img src="./icons/user-gear-solid.svg" class="header-icons">
+                    </div>
+                </div>
+            </div>
+            <div class="pills">
+                <div class="pill msg-pill active">
+                    Messages
+                </div>
+                <div class="pill group-pill">
+                    Groups
+                </div>
+            </div>
+        </div>
+        <div class="chat-list">
+            <template class="user-chat-template">
+                <div class="user-chat">
+                    <div class="dp">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4j5EsloB48DnxRWOYQKJxT01dGj6cVFEDPQ&usqp=CAU"
+                            class="dp-img">
+                    </div>
+                    <div class="msg-preview">
+                        <div class="msg-user-name">Carmen Meyers</div>
+                        <div class="msg-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum
+                            officiis
+                            modi nisi sit minima, molestiae, repellendus nobis atque assumenda quisquam doloribus
+                            laboriosam
+                            perferendis omnis ad quod ratione! Nihil, fuga.
+                        </div>
+                    </div>
+                    <div class="msg-stats">
+                        <div class="msg-count">9</div>
+                        <div class="msg-time">5:45 PM</div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</body>
+
+<script src="./MOCK_DATA.js"></script>
+<script>
+    const userChatTemplate = document.querySelector('.user-chat-template');
+    const chatList = document.querySelector('.chat-list');
+
+    mock_data.forEach((chat, index) => {
+        const userChatClone = userChatTemplate.content.cloneNode(true);
+        userChatClone.querySelector('.user-chat').setAttribute('data-id', chat.id);
+
+        const msgBody = userChatClone.querySelector('.msg-body');
+        msgBody.innerText = chat.message;
+
+        const msgUserName = userChatClone.querySelector('.msg-user-name');
+        msgUserName.innerText = chat.username;
+
+        // const dpImg = userChatClone.querySelector('.dp-img');
+        // dpImg.src = 'https://i.pravatar.cc/300'
+
+        const msgCount = userChatClone.querySelector('.msg-count');
+        msgCount.innerText = chat.message_count;
+
+        chatList.appendChild(userChatClone);
+    })
+</script>
+
+<script>
+    let timer;
+
+    chatList.addEventListener("click", function (event) {
+        const userChat = event.target.closest('.user-chat');
+        // alert(userChat.getAttribute('data-id'));
+        goToDestination('/assets/chats_ui.html');
+    });
+
+    function goToDestination(url) {
+        window.location.href = url;
+    }
+
+</script>
+
+</html>

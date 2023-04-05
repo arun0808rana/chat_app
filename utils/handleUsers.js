@@ -83,7 +83,7 @@ async function getChatHistory(user1, user2) {
     if(User1 && User2){
         return await new Promise((resolve, reject) => {
             try {
-                pool.query(`SELECT * FROM messages WHERE sender_id = $1 AND recipient_id = $2`, [User1.id, User2.id], (err, res) => {
+                pool.query(`SELECT * FROM messages WHERE (sender_id = $1 AND recipient_id = $2) OR (sender_id = $2 AND recipient_id = $1)`, [User1.id, User2.id], (err, res) => {
                     // console.log('res', res.rows)
                     if (err) {
                         console.error('[Error]: finding chat history', err.message);
